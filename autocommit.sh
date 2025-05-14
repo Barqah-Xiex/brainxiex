@@ -6,9 +6,9 @@ REPO_DIR="$(pwd)"
 # Masuk ke direktori repository
 cd "$REPO_DIR" || { echo "Direktori tidak ditemukan"; exit 1; }
 
-npm version minor
+npm version minor;
 
-git remote -v
+git remote -v;
 
 # Tarik perubahan dari remote repository
 git pull origin main --rebase # Ganti 'main' dengan 'master' jika perlu
