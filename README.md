@@ -80,4 +80,8 @@ Berikut adalah fungsi-fungsi yang tersedia dalam `brainxiex`:
 Kami menyambut baik kontribusi dari semua orang. Jika Anda memiliki saran atau perbaikan, silakan buat pull request atau buka isu di repositori ini.
 
 ## Lisensi
+<<<<<<< HEAD
 Brainxiex dilisensikan di bawah [MIT License](LICENSE).
+=======
+Brainxiex dilisensikan di bawah [MIT License](LICENSE).
+>>>>>>> f094130 (Auto commit on 2024-09-24 12:48:45)
