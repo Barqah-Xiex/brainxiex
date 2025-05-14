@@ -32,49 +32,51 @@ const prompt = "Apakah Rapunzel suka makan kerupuk?";
 const model = "brainxiex"; // Model yang digunakan (brainxiex, miaw, cecep)
 const session_id = "brainxiex_module123"; // ID sesi opsional untuk menyimpan data
 
-brainxiex.ai(prompt, model, session_id)
-    .then(res => console.log(res.answer));
-
 // Jika ingin mode full, seperti OpenAI
-brainxiex.ai.LLM({
+brainxiex.api.ai({
     messages: [{role: "user", content: "Apakah Rapunzel suka makan kerupuk?"}],
     model: "brainxiex",
     // sessionID: "brainxiex_module123", // Uncomment if session ID is necessary
     // Jangan gunakan sessionID jika tidak diperlukan
 })
     .then(res => console.log(res.answer));
+
+// Jika ingin lebih simpel
+brainxiex.api.ai.simple(prompt, model, session_id)
+    .then(res => console.log(res.answer));
+
 ```
 
 ## Daftar Fungsi
 Berikut adalah fungsi-fungsi yang tersedia dalam `brainxiex`:
 
 - `version` - Menampilkan versi library
-- `ai` - Mengakses fungsi AI utama
-- `ai.ai_simple` - Fungsi AI sederhana
-- `ai.LLM` - Mengakses model AI besar
-- `ai_simple` - Fungsi AI dengan antarmuka sederhana
-- `LLM` - Model AI besar
-- `downloader` - Mengunduh konten dari URL
-- `image` - Mengelola gambar
-- `media2buffer` - Mengonversi media menjadi buffer
-- `minigame` - Memainkan mini game
-- `random` - Menghasilkan nilai acak
-- `search` - Melakukan pencarian
-- `toURL` - Mengonversi teks menjadi URL
+- `api.ai` - Mengakses fungsi AI utama
+- `api.ai.ai_simple` - Fungsi AI sederhana
+- `api.ai.LLM` - Mengakses model AI besar
+- `api.ai_simple` - Fungsi AI dengan antarmuka sederhana
+- `api.LLM` - Model AI besar
+- `api.downloader` - Mengunduh konten dari URL
+- `api.image` - Mengelola gambar
+- `api.media2buffer` - Mengonversi media menjadi buffer
+- `api.minigame` - Memainkan mini game
+- `api.random` - Menghasilkan nilai acak
+- `api.search` - Melakukan pencarian
+- `api.toURL` - Mengonversi teks menjadi URL
 - Fungsi media sosial:
-  - `facebook`, `instagram`, `tiktok`, `twitter`, `youtube` (alias: `fb`, `ig`, `tt`, `tw`, `yt`)
+  - `api.facebook`, `api.instagram`, `api.tiktok`, `api.twitter`, `api.youtube` (alias: `api.fb`, `api.ig`, `api.tt`, `api.tw`, `api.yt`)
 - Fungsi interaktif:
-  - `play`, `remini`, `hitamkan`, `toAnime`, `imagine`, `nulis`, `sticker`
+  - `api.play`, `api.remini`, `api.hitamkan`, `api.toAnime`, `api.imagine`, `api.nulis`, `api.sticker`
 - Fungsi kartu:
-  - `welcomeCard`, `goodbyeCard`, `banner`
+  - `api.welcomeCard`, `api.goodbyeCard`, `api.banner`
 - Fungsi screenshot:
-  - `screenshot`, `fakechat`, `ss`, `qc`
+  - `api.screenshot`, `api.fakechat`, `api.ss`, `api.qc`
 - Fungsi permainan:
-  - `family100`, `tebakgambar`, `caklontong`, `siapakahaku`, `tebakbendera`, `tebakkalimat`, `tebakkata`, `tebakkimia`, `tebaklirik`, `tebaktebakan`
+  - `api.family100`, `api.tebakgambar`, `api.caklontong`, `api.siapakahaku`, `api.tebakbendera`, `api.tebakkalimat`, `api.tebakkata`, `api.tebakkimia`, `api.tebaklirik`, `api.tebaktebakan`
 - Pertanyaan umum:
-  - `apakah`, `bisakah`, `citacita`, `truth`, `dare`, `fakta`, `gombal`, `hobi`, `katamutiara`, `tebakan`, `watak`
+  - `api.apakah`, `api.bisakah`, `api.citacita`, `api.truth`, `api.dare`, `api.fakta`, `api.gombal`, `api.hobi`, `api.katamutiara`, `api.tebakan`, `api.watak`
 - Fungsi pencarian:
-  - `pinterest`, `google`, `youtubeSearch`, `yts`
+  - `api.pinterest`, `api.google`, `api.youtubeSearch`, `api.yts`
 
 ## Kontribusi
 Kami menyambut baik kontribusi dari semua orang. Jika Anda memiliki saran atau perbaikan, silakan buat pull request atau buka isu di repositori ini.
