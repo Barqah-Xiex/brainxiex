@@ -6,6 +6,8 @@ REPO_DIR="$(pwd)"
 # Masuk ke direktori repository
 cd "$REPO_DIR" || { echo "Direktori tidak ditemukan"; exit 1; }
 
+npm version minor
+
 git remote -v
 
 # Tarik perubahan dari remote repository
@@ -21,6 +23,7 @@ if [ "$(git status --porcelain)" ]; then
 
   # Push ke remote repository
   git push origin main # Ubah 'main' dengan 'master' jika branch utama Anda adalah master
+  npm publish --access public
 else
   echo "Tidak ada perubahan untuk di-commit."
 fi
