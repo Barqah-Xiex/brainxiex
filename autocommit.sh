@@ -3,15 +3,16 @@
 # Mendapatkan direktori kerja saat ini
 REPO_DIR="$(pwd)";
 
+# npm version patch --no-git-tag-version;
+npm version minor --no-git-tag-version;
+
+sleep 3;
+
 # git remote add origin https://github.com/Barqah-Xiex/brainxiex.git;
 git remote set-url origin https://github.com/Barqah-Xiex/brainxiex.git;
 
 # Masuk ke direktori repository
 cd "$REPO_DIR" || { echo "Direktori tidak ditemukan"; exit 1; }
-
-npm version minor;
-
-sleep 3;
 
 git remote -v;
 
