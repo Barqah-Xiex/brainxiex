@@ -8,18 +8,44 @@
  *
  * @returns {Object} Objek yang dihasilkan dari modul `./lib` dengan konfigurasi yang disediakan.
  */
-module.exports = function(config = {}) {
-    config.apikey = config.apikey || `BarqahGantengBangetGilaGantengnyaBikinTergilaGilaBangetSumpah`;
-    config.BASE = config.BASE || `http://xiex.my.id`;
-    config.session_local = config.session_local || false;
+/**
+ * Entry point for brainxiex library.
+ *
+ * @param {Object} [config={}] - Configuration object
+ * @param {string} [config.apikey] - API key used for remote requests. If omitted a placeholder is used.
+ * @param {string} [config.BASE] - Base URL for the API endpoints.
+ * @param {boolean} [config.session_local=false] - When true, enables an in-memory session store on the global object.
+ *
+ * @returns {Object} Library instance exposing api modules and version.
+ */
+module.exports = function (config = {}) {
+  const defaults = {
+    // Use environment variable when possible. Falls back to the original default key when not provided.
+    apikey:
+      process.env.BRAINXIE_APIKEY ||
+      'BarqahGantengBangetGilaGantengnyaBikinTergilaGilaBangetSumpah',
+    BASE: process.env.BRAINXIE_BASE || 'http://xiex.my.id',
+    session_local: false,
+  };
 
-    if(config.session_local && Boolean(global)){
-        global.brainxiex = global.brainxiex || {};
-        global.brainxiex.session = global.brainxiex.session || {};
-    }
+  const cfg = Object.assign({}, defaults, config);
 
-    return {
-        version: require("./package.json").version,
-        ...require("./lib")(config),
-    };
+  if (cfg.session_local && typeof global !== 'undefined') {
+    global.brainxiex = global.brainxiex || {};
+    global.brainxiex.session = global.brainxiex.session || {};
+  }
+
+  const lib = require('./lib')(cfg);
+  const fs = require('fs');
+  let version = '0.0.0';
+  try {
+    const pkg = JSON.parse(
+      fs.readFileSync(require('path').join(__dirname, 'package.json'), 'utf8')
+    );
+    version = pkg && pkg.version ? pkg.version : version;
+  } catch (e) {
+    // ignore and fallback to default version
+  }
+
+  return Object.assign({ version }, lib);
 };

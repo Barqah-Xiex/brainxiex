@@ -3,8 +3,8 @@
 # Mendapatkan direktori kerja saat ini
 REPO_DIR="$(pwd)";
 
-# npm version patch --no-git-tag-version;
-npm version minor --no-git-tag-version;
+npm version patch --no-git-tag-version;
+# npm version minor --no-git-tag-version;
 
 sleep 3;
 

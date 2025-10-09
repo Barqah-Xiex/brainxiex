@@ -1,0 +1,9 @@
+{
+  "javascript.suggest.enabled": true,
+  "javascript.suggest.completeFunctionCalls": true,
+  "javascript.implicitProjectConfig.checkJs": true,
+  "editor.formatOnSave": false,
+  "files.exclude": {
+    "node_modules": true
+  }
+}
