@@ -32,7 +32,7 @@ if [ "$(git status --porcelain)" ]; then
 
   # Push ke remote repository
   git push origin main # Ubah 'main' dengan 'master' jika branch utama Anda adalah master
-  # npm publish --access public
+  npm publish --access public
 else
   echo "Tidak ada perubahan untuk di-commit."
 fi
