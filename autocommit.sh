@@ -1,12 +1,17 @@
 #!/bin/bash
 
 # Mendapatkan direktori kerja saat ini
-REPO_DIR="$(pwd)"
+REPO_DIR="$(pwd)";
+
+# git remote add origin https://github.com/Barqah-Xiex/brainxiex.git;
+git remote set-url origin https://github.com/Barqah-Xiex/brainxiex.git;
 
 # Masuk ke direktori repository
 cd "$REPO_DIR" || { echo "Direktori tidak ditemukan"; exit 1; }
 
 npm version minor;
+
+sleep 3;
 
 git remote -v;
 
@@ -19,11 +24,15 @@ git add .
 # Memeriksa status git
 if [ "$(git status --porcelain)" ]; then
   # Jika ada perubahan, lakukan commit
-  git commit -m "Auto commit on $(date +'%Y-%m-%d %H:%M:%S')"
+  if [ $# -eq 0 ]; then
+    git commit -m "Auto commit on $(date +'%Y-%m-%d %H:%M:%S')"
+  else
+    git commit -m "$*"
+  fi
 
   # Push ke remote repository
   git push origin main # Ubah 'main' dengan 'master' jika branch utama Anda adalah master
-  npm publish --access public
+  # npm publish --access public
 else
   echo "Tidak ada perubahan untuk di-commit."
 fi
