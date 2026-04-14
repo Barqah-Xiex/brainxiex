@@ -1,68 +1,202 @@
-import { Buffer } from 'buffer';
+/// <reference types="node" />
 
 declare namespace Brainxiex {
-  interface Config {
-    apikey?: string;
-    BASE?: string;
-    session_local?: boolean;
-  }
 
-  type AnyObject = { [key: string]: any };
+  // ======================
+  // CORE TYPES
+  // ======================
 
-  interface LLMPayload {
-    messages?: Array<{ role: string; content: string }>;
-    model?: string;
-    sessionID?: string;
+  interface AIResponse {
+    answer?: string;
     [key: string]: any;
   }
 
+  type AnyObject = Record<string, any>;
+
+  // ======================
+  // AI
+  // ======================
+
   interface AI {
-    (payload: LLMPayload): Promise<any>;
-    LLM: (payload: LLMPayload) => Promise<any>;
-    simple: (prompt: string, model?: string, sessionID?: string, images?: string | Buffer) => Promise<any>;
+    (payload: {
+      model?: string;
+      messages: { role: string; content: string }[];
+      sessionID?: string;
+      images?: any[];
+    }): Promise<AIResponse>;
+
+    LLM: AI;
+
+    simple(
+      prompt: string,
+      model?: string,
+      sessionID?: string,
+      images?: any[]
+    ): Promise<AIResponse>;
   }
 
-  interface ImageAPI {
-    remini(input: Buffer | string): Promise<Buffer | AnyObject>;
-    hitamkan(input: Buffer | string, ext?: string): Promise<Buffer | AnyObject>;
-    toAnime(input: Buffer | string, ext?: string): Promise<Buffer | AnyObject>;
-    imagine(prompt: string): Promise<Buffer | AnyObject>;
-    nulis(text: string): Promise<Buffer | AnyObject>;
-    sticker(input: Buffer | string, pack?: string): Promise<Buffer | AnyObject>;
-    welcomeCard(name: string, number: string, ppimg: string, group: string, memberCount: number, title?: string): Promise<Buffer | AnyObject>;
-    goodbyeCard(name: string, number: string, ppimg: string, group: string, memberCount: number, title?: string): Promise<Buffer | AnyObject>;
-    banner(name: string, ppimg: string): Promise<Buffer | AnyObject>;
-    screenshot(url: string): Promise<Buffer | AnyObject>;
-    fakechat(name: string, ppimg: string, arg: AnyObject): Promise<Buffer | AnyObject>;
+  // ======================
+  // DOWNLOADER
+  // ======================
+
+  interface Downloader {
+    reels(url: string): Promise<AnyObject>;
+    facebook(url: string): Promise<AnyObject>;
+    instagram(url: string): Promise<AnyObject>;
+    tiktok(url: string): Promise<AnyObject>;
+    twitter(url: string): Promise<AnyObject>;
+    youtube(url: string): Promise<AnyObject>;
+
+    fb(url: string): Promise<AnyObject>;
+    ig(url: string): Promise<AnyObject>;
+    tt(url: string): Promise<AnyObject>;
+    tw(url: string): Promise<AnyObject>;
+    yt(url: string): Promise<AnyObject>;
+
+    play(query: string): Promise<AnyObject>;
   }
 
-  interface DownloaderAPI {
-    [key: string]: (url: string) => Promise<any>;
+  // ======================
+  // IMAGE
+  // ======================
+
+  interface Image {
+    remini(input: any): Promise<Buffer>;
+    hitamkan(input: any): Promise<Buffer>;
+    toAnime(input: any): Promise<Buffer>;
+
+    imagine(prompt: string): Promise<Buffer>;
+    nulis(text: string): Promise<Buffer>;
+
+    sticker(input: any): Promise<Buffer>;
+
+    welcomeCard(data: AnyObject): Promise<Buffer>;
+    goodbyeCard(data: AnyObject): Promise<Buffer>;
+    banner(data: AnyObject): Promise<Buffer>;
+
+    screenshot(url: string): Promise<Buffer>;
+    fakechat(data: AnyObject): Promise<Buffer>;
   }
 
-  interface ToolsAPI {
-    [key: string]: (...args: any[]) => Promise<any> | any;
+  // ======================
+  // MINIGAME
+  // ======================
+
+  interface Minigame {
+    family100(): AnyObject;
+    tebakgambar(): AnyObject;
+    caklontong(): AnyObject;
+    siapakahaku(): AnyObject;
+    tebakbendera(): AnyObject;
+    tebakkalimat(): AnyObject;
+    tebakkata(): AnyObject;
+    tebakkimia(): AnyObject;
+    tebaklirik(): AnyObject;
+    tebaktebakan(): AnyObject;
   }
 
-  interface ApiNamespace {
+  // ======================
+  // RANDOM
+  // ======================
+
+  interface Random {
+    apakah(text: string): AnyObject;
+    bisakah(text: string): AnyObject;
+    citacita(): AnyObject;
+    truth(): AnyObject;
+    dare(): AnyObject;
+    fakta(): AnyObject;
+    gombal(): AnyObject;
+    hobi(): AnyObject;
+    katamutiara(): AnyObject;
+    tebakan(): AnyObject;
+    watak(): AnyObject;
+  }
+
+  // ======================
+  // SEARCH
+  // ======================
+
+  interface Search {
+    pinterest(query: string): AnyObject;
+    google(query: string): AnyObject;
+    youtubeSearch(query: string): AnyObject;
+    yts(query: string): AnyObject;
+  }
+
+  // ======================
+  // TOOLS
+  // ======================
+
+  interface Tools {
+    textToBase64(text: string): string;
+    base64ToText(base64: string): string;
+
+    textToEnchant(text: string): string;
+    enchantToText(text: string): string;
+
+    textToSunda(text: string): string;
+    sundaToText(text: string): string;
+
+    extToMimetype(ext: string): string;
+    mimetypeToExt(mime: string): string;
+
+    gtts(text: string): Buffer | string;
+
+    formater(data: AnyObject): Promise<AnyObject>;
+
+    googleAI(prompt: string): AnyObject;
+  }
+
+  // ======================
+  // STALK
+  // ======================
+
+  interface Stalk {
+    tiktokstalk(username: string): AnyObject;
+    instagramstalk(username: string): AnyObject;
+    robloxstalk(username: string): AnyObject;
+  }
+
+  // ======================
+  // API ROOT
+  // ======================
+
+  interface API {
     ai: AI;
-    image: ImageAPI;
-    downloader: DownloaderAPI;
-    media2buffer: (input: Buffer | string, postBody?: any) => Promise<Buffer>;
-    minigame: ToolsAPI;
-    random: ToolsAPI;
-    search: ToolsAPI;
-    tools: ToolsAPI;
-    stalk: ToolsAPI;
-    toURL: (input: Buffer | string, extension?: string) => Promise<any>;
+    downloader: Downloader;
+    image: Image;
+
+    media2buffer(input: any): Promise<Buffer>;
+
+    minigame: Minigame;
+    random: Random;
+    search: Search;
+    tools: Tools;
+    stalk: Stalk;
+
+    toURL(input: any): Promise<string>;
+    raw(endpoint: string, payload?: AnyObject): Promise<AnyObject>;
   }
+
+  // ======================
+  // CLIENT
+  // ======================
 
   interface Client {
-    version: string;
-    api: ApiNamespace;
+    version: '1.3.3';
+    api: API;
   }
 }
 
-declare function brainxiex(config?: Brainxiex.Config): Brainxiex.Client;
+// ======================
+// EXPORT
+// ======================
+
+declare function brainxiex(config?: {
+  apikey?: string;
+  BASE?: string;
+  session_local?: boolean;
+}): Brainxiex.Client;
 
 export = brainxiex;
