@@ -24,7 +24,7 @@ module.exports = function (config = {}) {
     apikey:
       process.env.BRAINXIE_APIKEY ||
       'BarqahGantengBangetGilaGantengnyaBikinTergilaGilaBangetSumpah',
-    BASE: process.env.BRAINXIE_BASE || 'http:/brainxiex.com',
+    BASE: process.env.BRAINXIE_BASE || 'http://brainxiex.com',
     session_local: false,
   };
 
