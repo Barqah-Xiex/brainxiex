@@ -266,7 +266,7 @@ Low-level request (advanced).
 ### AI dengan session
 
 ```js
-const brainxiex = require('.')({ session_local: true });
+const brainxiex = require('brainxiex')({ session_local: true });
 
 async function chat() {
   const res = await brainxiex.api.ai.LLM({
@@ -286,7 +286,7 @@ chat();
 
 ```js
 const fs = require('fs');
-const brainxiex = require('.')({});
+const brainxiex = require('brainxiex')({});
 
 async function run() {
   const buf = await brainxiex.api.image.sticker('./image.jpg');
