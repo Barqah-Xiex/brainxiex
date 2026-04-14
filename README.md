@@ -4,6 +4,8 @@
 
 **Brainxiex** adalah library AI yang dirancang untuk membantu dalam berbagai fungsi, seperti menjawab pertanyaan, melakukan pencarian, dan menghasilkan konten kreatif. Dengan Brainxiex, Anda dapat dengan mudah mengintegrasikan kecerdasan buatan ke dalam aplikasi Anda.
 
+---
+
 ## Instalasi
 
 Untuk menginstal `brainxiex`, gunakan perintah npm berikut:
@@ -12,151 +14,300 @@ Untuk menginstal `brainxiex`, gunakan perintah npm berikut:
 npm install brainxiex
 ```
 
-Jika Anda ingin menginstal dari repositori GitHub, gunakan:
+Atau dari GitHub:
 
 ```bash
 npm install https://github.com/Barqah-Xiex/brainxiex.git
 ```
 
-## Penggunaan
+---
 
-Berikut adalah contoh dasar penggunaan `brainxiex`:
+## Penggunaan Dasar
 
 ```javascript
 const brainxiex = require('brainxiex')({
-  // apikey: 'YOUR_API_KEY', // Un-comment this line to use an API key
-  session_local: true, // Set to true for local session management
-});
-
-// CATATAN: Jangan gunakan apikey jika tidak memilikinya.
-// CATATAN: Jangan gunakan session_local jika ingin menyimpan data di server.
-
-const prompt = 'Apakah Rapunzel suka makan kerupuk?';
-const model = 'brainxiex'; // Model yang digunakan (brainxiex, miaw, cecep)
-const session_id = 'brainxiex_module123'; // ID sesi opsional untuk menyimpan data
-
-// Jika ingin mode full, seperti OpenAI
-brainxiex.api
-  .ai({
-    messages: [{ role: 'user', content: 'Apakah Rapunzel suka makan kerupuk?' }],
-    model: 'brainxiex',
-    // sessionID: "brainxiex_module123", // Uncomment if session ID is necessary
-    // Jangan gunakan sessionID jika tidak diperlukan
-  })
-  .then((res) => console.log(res.answer));
-
-// Jika ingin lebih simpel
-brainxiex.api.ai.simple(prompt, model, session_id).then((res) => console.log(res.answer));
-```
-
-# brainxiex
-
-brainxiex is a lightweight JavaScript client library that wraps a set of remote API endpoints
-(`xiex.my.id`) to provide convenience helpers for AI calls, image manipulation, downloads and
-utility tools. The library focuses on simple inputs (Buffer, file path, URL) and returns either
-raw Buffers (for media endpoints) or parsed JSON objects for regular APIs.
-
-This repo intentionally includes JSDoc comments so VS Code (and other editors) can surface
-intellisense and parameter hints.
-
-## Quick start
-
-Install (if published) or use from local project:
-
-```bash
-# local usage
-node -e "const bx = require('./')({ session_local: true }); console.log(Object.keys(bx));"
-```
-
-## Usage
-
-Create a client and call APIs. The module exports a factory function that accepts a config object.
-
-```js
-const brainxiex = require('.')({
-  apikey: process.env.BRAINXIE_APIKEY,
-  BASE: 'http://xiex.my.id',
+  // apikey: 'YOUR_API_KEY',
   session_local: true,
 });
 
-// AI example (LLM)
-brainxiex.api
-  .ai({
-    model: 'brainxiex',
-    messages: [{ role: 'user', content: 'Halo! Ceritakan lelucon singkat.' }],
-  })
-  .then((res) => console.log(res))
-  .catch(console.error);
+// CATATAN:
+// - Jangan gunakan apikey jika tidak punya
+// - Jangan gunakan session_local jika ingin simpan di server
 
-// Image example (buffer/file/URL accepted)
-// returns a Buffer (or an error object)
-brainxiex.api.image.remini('./tests/sample.jpg').then((bufOrErr) => console.log(bufOrErr));
+const prompt = 'Apakah Rapunzel suka makan kerupuk?';
+const model = 'brainxiex';
+const session_id = 'brainxiex_module123';
+
+// Mode full (mirip OpenAI)
+brainxiex.api.ai({
+  messages: [{ role: 'user', content: prompt }],
+  model,
+}).then((res) => console.log(res.answer));
+
+// Mode simple
+brainxiex.api.ai.simple(prompt, model, session_id)
+  .then((res) => console.log(res.answer));
 ```
 
-## API Reference (high-level)
+---
 
-Top-level exported object contains:
+# 🧠 Struktur Object (Mapping)
 
-- `version` — string from package.json
-- `api` — namespace containing modules:
-  - `ai` — AI helpers
-    - `.LLM(payload)` — low-level LLM request
-    - `.simple(prompt, model?, sessionID?, images?)` — convenience wrapper
-  - `image` — image utilities that accept Buffer|path|URL and return Buffers
-    - `remini`, `hitamkan`, `toAnime`, `imagine`, `nulis`, `sticker`, `welcomeCard`, `goodbyeCard`, `banner`, `screenshot`, `fakechat`
-  - `downloader` — download helpers for social platforms (reels, tiktok, youtube, etc.)
-  - `media2buffer` — internal helper to convert Buffer|file|URL to Buffer
-  - `toURL` — uploads a Buffer/file/URL to a remote uploader and returns the remote URL
-  - `minigame`, `random`, `search`, `tools`, `stalk` — various helpers calling remote endpoints
-
-All network helpers return Promises that resolve to either the remote JSON object or an
-error object with an `error` property. Media endpoints typically return Buffers (or will reject
-with an error). Callers should check returned values.
-
-## Examples
-
-AI chat (maintaining session):
+Setelah inisialisasi:
 
 ```js
-const brainxiex = require('.')({ session_local: true, apikey: 'your-key' });
+const brainxiex = require('brainxiex')({ options });
+```
+
+Struktur yang dihasilkan:
+
+```js
+{
+  version: '1.3.0',
+  api: { ... }
+}
+```
+
+---
+
+## 📦 version
+
+```js
+brainxiex.version
+```
+
+Versi library.
+
+---
+
+## 🧠 api.ai (AI / LLM)
+
+```js
+brainxiex.api.ai(payload)
+brainxiex.api.ai.LLM(payload)
+brainxiex.api.ai.simple(prompt, model?, sessionID?, images?)
+```
+
+---
+
+## 📥 api.downloader
+
+```js
+brainxiex.api.downloader.reels(url)
+brainxiex.api.downloader.facebook(url)
+brainxiex.api.downloader.instagram(url)
+brainxiex.api.downloader.tiktok(url)
+brainxiex.api.downloader.twitter(url)
+brainxiex.api.downloader.youtube(url)
+```
+
+Alias:
+
+```js
+brainxiex.api.downloader.fb(url)
+brainxiex.api.downloader.ig(url)
+brainxiex.api.downloader.tt(url)
+brainxiex.api.downloader.tw(url)
+brainxiex.api.downloader.yt(url)
+```
+
+Tambahan:
+
+```js
+brainxiex.api.downloader.play(query)
+```
+
+---
+
+## 🖼️ api.image
+
+```js
+brainxiex.api.image.remini(input)
+brainxiex.api.image.hitamkan(input)
+brainxiex.api.image.toAnime(input)
+brainxiex.api.image.imagine(prompt)
+brainxiex.api.image.nulis(text)
+brainxiex.api.image.sticker(input)
+```
+
+Generator:
+
+```js
+brainxiex.api.image.welcomeCard(data)
+brainxiex.api.image.goodbyeCard(data)
+brainxiex.api.image.banner(data)
+```
+
+Tools:
+
+```js
+brainxiex.api.image.screenshot(url)
+brainxiex.api.image.fakechat(data)
+```
+
+---
+
+## 🔄 api.media2buffer
+
+```js
+brainxiex.api.media2buffer(input)
+```
+
+Convert Buffer / file / URL → Buffer
+
+---
+
+## 🎮 api.minigame
+
+```js
+brainxiex.api.minigame.family100()
+brainxiex.api.minigame.tebakgambar()
+brainxiex.api.minigame.caklontong()
+brainxiex.api.minigame.siapakahaku()
+brainxiex.api.minigame.tebakbendera()
+brainxiex.api.minigame.tebakkalimat()
+brainxiex.api.minigame.tebakkata()
+brainxiex.api.minigame.tebakkimia()
+brainxiex.api.minigame.tebaklirik()
+brainxiex.api.minigame.tebaktebakan()
+```
+
+---
+
+## 🎲 api.random
+
+```js
+brainxiex.api.random.apakah(text)
+brainxiex.api.random.bisakah(text)
+brainxiex.api.random.citacita()
+brainxiex.api.random.truth()
+brainxiex.api.random.dare()
+brainxiex.api.random.fakta()
+brainxiex.api.random.gombal()
+brainxiex.api.random.hobi()
+brainxiex.api.random.katamutiara()
+brainxiex.api.random.tebakan()
+brainxiex.api.random.watak()
+```
+
+---
+
+## 🔎 api.search
+
+```js
+brainxiex.api.search.pinterest(query)
+brainxiex.api.search.google(query)
+brainxiex.api.search.youtubeSearch(query)
+brainxiex.api.search.yts(query)
+```
+
+---
+
+## 🛠️ api.tools
+
+```js
+brainxiex.api.tools.textToBase64(text)
+brainxiex.api.tools.base64ToText(base64)
+brainxiex.api.tools.textToEnchant(text)
+brainxiex.api.tools.enchantToText(text)
+brainxiex.api.tools.textToSunda(text)
+brainxiex.api.tools.sundaToText(text)
+```
+
+File utils:
+
+```js
+brainxiex.api.tools.extToMimetype(ext)
+brainxiex.api.tools.mimetypeToExt(mimetype)
+```
+
+Lainnya:
+
+```js
+brainxiex.api.tools.gtts(text)
+brainxiex.api.tools.formater(data)
+brainxiex.api.tools.googleAI(prompt)
+```
+
+---
+
+## 🕵️ api.stalk
+
+```js
+brainxiex.api.stalk.tiktokstalk(username)
+brainxiex.api.stalk.instagramstalk(username)
+brainxiex.api.stalk.robloxstalk(username)
+```
+
+---
+
+## 🌐 api.toURL
+
+```js
+brainxiex.api.toURL(input)
+```
+
+Upload Buffer/file/URL → URL
+
+---
+
+## ⚙️ api.raw
+
+```js
+brainxiex.api.raw(endpoint, payload)
+```
+
+Low-level request (advanced).
+
+---
+
+## Contoh Tambahan
+
+### AI dengan session
+
+```js
+const brainxiex = require('.')({ session_local: true });
 
 async function chat() {
   const res = await brainxiex.api.ai.LLM({
-    messages: [{ role: 'user', content: 'Siapa presiden Indonesia saat ini?' }],
+    messages: [{ role: 'user', content: 'Halo!' }],
     model: 'brainxiex',
-    sessionID: 'example-session',
+    sessionID: 'test-session',
   });
-  console.log('LLM response:', res);
+  console.log(res);
 }
 
-chat().catch(console.error);
+chat();
 ```
 
-Image flow (upload local file and generate sticker):
+---
+
+### Image → Sticker
 
 ```js
-const brainxiex = require('.')({ apikey: 'xxx' });
+const fs = require('fs');
+const brainxiex = require('.')({});
 
-async function makeSticker() {
-  const stickerBuffer = await brainxiex.api.image.sticker('./images/my-face.jpg');
-  if (stickerBuffer && stickerBuffer.error) return console.error('err', stickerBuffer.error);
-  require('fs').writeFileSync('sticker.webp', stickerBuffer);
+async function run() {
+  const buf = await brainxiex.api.image.sticker('./image.jpg');
+  fs.writeFileSync('sticker.webp', buf);
 }
 
-makeSticker().catch(console.error);
+run();
 ```
 
-## Developer notes
+---
 
-- JSDoc is included in source files to improve editor suggestions. I added `jsconfig.json` and
-  `.vscode/settings.json` to enable checkJs and completion of function calls in VS Code.
-- Network calls use `axios` and follow a simple pattern: try -> return data or { error }.
-- `media2buffer` is the core utility to normalize inputs (Buffer | path | URL) into a Buffer.
+## Catatan
 
-## Contributing
+- Semua fungsi return **Promise**
+- Error format:
+```js
+{ error: 'message' }
+```
+- Endpoint media return **Buffer**
 
-Feel free to open issues or PRs. Keep functions small and documented using JSDoc for best DX in
-editors.
+---
 
 ## License
 
