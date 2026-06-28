@@ -149,6 +149,57 @@ declare namespace Brainxiex {
   }
 
   // ======================
+  // UTILS
+  // ======================
+
+  interface Utils {
+    fs: typeof import('fs');
+    isJSON(param: any): boolean;
+    encodeURLParameter(obj: any, sep?: string, eq?: string, name?: string): string;
+    decodeURLParameter(params?: string): any;
+    parseCookies(cookieHeader?: string): Record<string, string>;
+    serializeCookie(cookie: Record<string, string>): string;
+    setCookie(res: any, name: string, value: string, maxAgeInSeconds?: number, path?: string): any;
+    logDetailedError(err: Error, evalCode?: string | null): void;
+    sleep(ms: number): Promise<void>;
+    isBigint(param: any): boolean;
+    isBool(param: any): boolean;
+    isBoolean(param: any): boolean;
+    isFunction(param: any): boolean;
+    isFunc(param: any): boolean;
+    isFxn(param: any): boolean;
+    isFn(param: any): boolean;
+    isNumber(param: any): boolean;
+    isNum(param: any): boolean;
+    isNumeric(param: any): boolean;
+    isObject(param: any): boolean;
+    isObj(param: any): boolean;
+    isObjectValue(param: any): boolean;
+    isString(param: any): boolean;
+    isStr(param: any): boolean;
+    isText(param: any): boolean;
+    isSymbol(param: any): boolean;
+    isSym(param: any): boolean;
+    isSet(param: any): boolean;
+    isSetValue(param: any): boolean;
+    isBuffer(param: any): boolean;
+    isBuf(param: any): boolean;
+    isStream(obj: any): boolean;
+    isReadableStream(obj: any): boolean;
+    isWritableStream(obj: any): boolean;
+    isTransformStream(obj: any): boolean;
+    string(obj: any): string;
+    log(...args: any[]): void;
+    typeLog(text: string, delay?: number): void;
+    formatDurasiDate(start: Date | string, end?: Date | string): string;
+    savedb(path: string, data: any): boolean;
+    loaddb(path: string): any;
+    detectFileType(buffer: Buffer | string): { ext: string; mime: string; dangerous?: boolean; reason?: string };
+    axios: typeof import('axios');
+    userAgent: string;
+  }
+
+  // ======================
   // STALK
   // ======================
 
@@ -186,6 +237,7 @@ declare namespace Brainxiex {
   interface Client {
     version: '1.3.3';
     api: API;
+    utils: Utils;
   }
 }
 

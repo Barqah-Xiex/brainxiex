@@ -64,7 +64,8 @@ Struktur yang dihasilkan:
 ```js
 {
   version: '1.3.0',
-  api: { ... }
+  api: { ... },
+  utils: { ... }
 }
 ```
 
@@ -237,6 +238,86 @@ brainxiex.api.tools.googleAI(prompt)
 brainxiex.api.stalk.tiktokstalk(username)
 brainxiex.api.stalk.instagramstalk(username)
 brainxiex.api.stalk.robloxstalk(username)
+```
+
+---
+
+## 🛠️ utils
+
+Utility functions untuk berbagai kebutuhan:
+
+### Type Checking
+
+```js
+brainxiex.utils.isJSON(param)
+brainxiex.utils.isBigint(param)
+brainxiex.utils.isBool(param)
+brainxiex.utils.isBoolean(param)
+brainxiex.utils.isFunction(param)
+brainxiex.utils.isFunc(param)
+brainxiex.utils.isFxn(param)
+brainxiex.utils.isFn(param)
+brainxiex.utils.isNumber(param)
+brainxiex.utils.isNum(param)
+brainxiex.utils.isNumeric(param)
+brainxiex.utils.isObject(param)
+brainxiex.utils.isObj(param)
+brainxiex.utils.isObjectValue(param)
+brainxiex.utils.isString(param)
+brainxiex.utils.isStr(param)
+brainxiex.utils.isText(param)
+brainxiex.utils.isSymbol(param)
+brainxiex.utils.isSym(param)
+brainxiex.utils.isSet(param)
+brainxiex.utils.isSetValue(param)
+brainxiex.utils.isBuffer(param)
+brainxiex.utils.isBuf(param)
+brainxiex.utils.isStream(obj)
+brainxiex.utils.isReadableStream(obj)
+brainxiex.utils.isWritableStream(obj)
+brainxiex.utils.isTransformStream(obj)
+```
+
+### String & URL
+
+```js
+brainxiex.utils.string(obj)
+brainxiex.utils.encodeURLParameter(obj, sep?, eq?, name?)
+brainxiex.utils.decodeURLParameter(params?)
+```
+
+### Cookie
+
+```js
+brainxiex.utils.parseCookies(cookieHeader?)
+brainxiex.utils.serializeCookie(cookie)
+brainxiex.utils.setCookie(res, name, value, maxAgeInSeconds?, path?)
+```
+
+### File System & Database
+
+```js
+brainxiex.utils.fs // Extended fs module
+brainxiex.utils.savedb(path, data)
+brainxiex.utils.loaddb(path)
+brainxiex.utils.detectFileType(buffer)
+```
+
+### Logging & Utilities
+
+```js
+brainxiex.utils.log(...args)
+brainxiex.utils.typeLog(text, delay?)
+brainxiex.utils.logDetailedError(err, evalCode?)
+brainxiex.utils.sleep(ms)
+brainxiex.utils.formatDurasiDate(start, end?)
+```
+
+### HTTP
+
+```js
+brainxiex.utils.axios // Axios instance with custom User-Agent
+brainxiex.utils.userAgent
 ```
 
 ---
