@@ -1,39 +1,67 @@
 #!/bin/bash
 
-# Mendapatkan direktori kerja saat ini
-REPO_DIR="$(pwd)";
+set -e
 
-npm version patch --no-git-tag-version;
-# npm version minor --no-git-tag-version;
+REPO_DIR="$(pwd)"
 
-sleep 3;
+echo "📦 Bump version..."
+npm version patch --no-git-tag-version
 
-# git remote add origin https://github.com/Barqah-Xiex/brainxiex.git;
-git remote set-url origin https://github.com/Barqah-Xiex/brainxiex.git;
+# Set remote
 
-# Masuk ke direktori repository
-cd "$REPO_DIR" || { echo "Direktori tidak ditemukan"; exit 1; }
+git remote set-url origin https://github.com/Barqah-Xiex/brainxiex.git
 
-git remote -v;
+cd "$REPO_DIR" || exit 1
 
-# Tarik perubahan dari remote repository
-git pull origin main --rebase # Ganti 'main' dengan 'master' jika perlu
+echo "🔄 Fetch latest..."
+git fetch origin main
 
-# Menambahkan semua perubahan
+echo "📂 Add changes..."
 git add .
 
-# Memeriksa status git
-if [ "$(git status --porcelain)" ]; then
-  # Jika ada perubahan, lakukan commit
-  if [ $# -eq 0 ]; then
-    git commit -m "Auto commit on $(date +'%Y-%m-%d %H:%M:%S')"
-  else
-    git commit -m "$*"
-  fi
+# Commit kalau ada perubahan
 
-  # Push ke remote repository
-  git push origin main # Ubah 'main' dengan 'master' jika branch utama Anda adalah master
-  npm publish --access public
+if [ -n "$(git status --porcelain)" ]; then
+echo "📝 Commit..."
+if [ $# -eq 0 ]; then
+git commit -m "Auto commit on $(date +'%Y-%m-%d %H:%M:%S')"
 else
-  echo "Tidak ada perubahan untuk di-commit."
+git commit -m "$*"
 fi
+
+echo "⬆️ Push..."
+git push origin main
+else
+echo "⚠️ Tidak ada perubahan"
+fi
+
+# ===== INPUT TOKEN =====
+
+echo ""
+read -s -p "🔐 Masukkan NPM Token: " NPM_TOKEN
+echo ""
+
+if [ -z "$NPM_TOKEN" ]; then
+echo "❌ Token kosong, abort."
+exit 1
+fi
+
+# Set token ke npm (temporary)
+
+npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
+
+# ===== PUBLISH =====
+
+PACKAGE_NAME=$(node -p "require('./package.json').name")
+PACKAGE_VERSION=$(node -p "require('./package.json').version")
+
+echo "📦 Cek versi di npm..."
+if npm view "$PACKAGE_NAME@$PACKAGE_VERSION" > /dev/null 2>&1; then
+echo "⚠️ Version $PACKAGE_VERSION sudah ada, skip publish"
+exit 0
+fi
+
+echo "🚀 Publish..."
+npm publish --access public
+
+echo "✅ Done!"
