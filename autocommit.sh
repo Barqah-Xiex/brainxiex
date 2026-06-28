@@ -38,7 +38,7 @@ fi
 # ===== INPUT TOKEN =====
 
 echo ""
-read -s -p "🔐 Masukkan NPM Token: " NPM_TOKEN
+read -s "🔐 Masukkan NPM Token: " NPM_TOKEN
 echo ""
 
 if [ -z "$NPM_TOKEN" ]; then
