@@ -1,6 +1,6 @@
 {
   "name": "brainxiex",
-  "version": "1.3.12",
+  "version": "1.3.13",
   "description": "Brainxiex library",
   "main": "index.js",
   "scripts": {
