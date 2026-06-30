@@ -390,6 +390,50 @@ run();
 
 ---
 
+## 📘 OpenAPI Documentation
+
+Semua endpoint tersedia di file `openapi.json`.
+Gunakan dokumentasi OpenAPI ini untuk melihat semua path, tag, dan parameter API yang didukung di server Brainxiex.
+
+Contoh path:
+
+```js
+/api/ai/chat/completions
+/api/downloader/youtube
+/api/image/resize
+/api/whatsapp/sendText
+```
+
+Jika endpoint belum tersedia di wrapper library, panggil langsung dengan `api.raw`:
+
+```js
+const result = await brainxiex.api.raw('ai/chat/completions', {
+  prompt: 'Halo',
+  model: 'brainxiex',
+});
+console.log(result);
+```
+
+---
+
+## 💡 VS Code Suggestions
+
+Untuk mendapatkan saran otomatis di VS Code, ada file snippet workspace di `.vscode/brainxiex.code-snippets`.
+Cukup buka workspace ini di VS Code dan gunakan prefix seperti `brainxiex`, `bxai`, `bxyt`, `bximg`, atau `bxraw`.
+
+Contoh snippet otomatis:
+
+```js
+const brainxiex = require('brainxiex')({
+  apikey: 'YOUR_API_KEY',
+  BASE: 'https://brainxiex.com',
+});
+
+const response = await brainxiex.api.ai.simple('Halo');
+```
+
+---
+
 ## License
 
 MIT

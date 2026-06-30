@@ -1,0 +1,77 @@
+{
+  "Brainxiex Initialize": {
+    "prefix": ["brainxiex", "bxinit"],
+    "body": [
+      "const brainxiex = require('brainxiex')({",
+      "  apikey: '${1:YOUR_API_KEY}',",
+      "  BASE: 'https://brainxiex.com',",
+      "  session_local: ${2|true,false|}",
+      "});",
+      ""
+    ],
+    "description": "Initialize Brainxiex client"
+  },
+  "Brainxiex AI simple": {
+    "prefix": ["bxai", "brainxiex-ai"],
+    "body": [
+      "const response = await brainxiex.api.ai.simple('${1:prompt}', '${2:brainxiex}', '${3:session_id}');",
+      "console.log(response);"
+    ],
+    "description": "Call Brainxiex simple AI method"
+  },
+  "Brainxiex AI full": {
+    "prefix": ["bxai-full", "brainxiex-ai-full"],
+    "body": [
+      "const response = await brainxiex.api.ai({",
+      "  messages: [{ role: 'user', content: '${1:halo}' }],",
+      "  model: '${2:brainxiex}',",
+      "  sessionID: '${3:sessionId}',",
+      "});",
+      "console.log(response);"
+    ],
+    "description": "Call Brainxiex AI with full payload"
+  },
+  "Brainxiex downloader youtube": {
+    "prefix": ["bxyt", "brainxiex-youtube"],
+    "body": [
+      "const result = await brainxiex.api.downloader.youtube('${1:url}');",
+      "console.log(result);"
+    ],
+    "description": "Download YouTube content via Brainxiex downloader"
+  },
+  "Brainxiex image imagine": {
+    "prefix": ["bximg", "brainxiex-imagine"],
+    "body": [
+      "const buffer = await brainxiex.api.image.imagine('${1:prompt}');",
+      "console.log(buffer);"
+    ],
+    "description": "Generate image with Brainxiex imagine"
+  },
+  "Brainxiex tools gtts": {
+    "prefix": ["bxgtts", "brainxiex-gtts"],
+    "body": [
+      "const audio = await brainxiex.api.tools.gtts('${1:text}');",
+      "console.log(audio);"
+    ],
+    "description": "Convert text to speech with Brainxiex tools"
+  },
+  "Brainxiex random fakta": {
+    "prefix": ["bxfakta", "brainxiex-fakta"],
+    "body": [
+      "const facts = await brainxiex.api.random.fakta();",
+      "console.log(facts);"
+    ],
+    "description": "Get random facts from Brainxiex"
+  },
+  "Brainxiex raw endpoint": {
+    "prefix": ["bxraw", "brainxiex-raw"],
+    "body": [
+      "const result = await brainxiex.api.raw('${1:ai/chat/completions}', {",
+      "  prompt: '${2:halo}',",
+      "  model: '${3:brainxiex}',",
+      "});",
+      "console.log(result);"
+    ],
+    "description": "Call any Brainxiex endpoint with raw API"
+  }
+}

@@ -1,0 +1,3774 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API Documentation",
+    "version": "1.0.0",
+    "description": "Dokumentasi API untuk proyek Anda"
+  },
+  "servers": [
+    {
+      "url": "https://brainxiex.com"
+    }
+  ],
+  "tags": [
+    "system",
+    {
+      "name": "ai"
+    },
+    {
+      "name": "brainxiex"
+    },
+    {
+      "name": "downloader"
+    },
+    {
+      "name": "generate copy"
+    },
+    {
+      "name": "image"
+    },
+    {
+      "name": "islami"
+    },
+    {
+      "name": "minigame"
+    },
+    {
+      "name": "nsfw"
+    },
+    {
+      "name": "ollama"
+    },
+    {
+      "name": "ppob"
+    },
+    {
+      "name": "primbon"
+    },
+    {
+      "name": "random"
+    },
+    {
+      "name": "servergame"
+    },
+    {
+      "name": "tools"
+    },
+    {
+      "name": "whatsapp"
+    }
+  ],
+  "paths": {
+    "/api/ceklimit": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          }
+        ],
+        "tags": [
+          "system"
+        ],
+        "responses": {
+          "200": {
+            "description": "{\"APIKEY\": 20}"
+          }
+        }
+      }
+    },
+    "/api/ai/chat/completions": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "model",
+            "in": "query",
+            "description": "model",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "prompt",
+            "in": "query",
+            "description": "prompt",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sessionID",
+            "in": "query",
+            "description": "sessionID",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "stream",
+            "in": "query",
+            "description": "stream",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "tools",
+            "in": "query",
+            "description": "tools",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "ai"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/ai/images/generations": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "prompt",
+            "in": "query",
+            "description": "prompt",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "ai"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/ai/images/identify-image": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "prompt",
+            "in": "query",
+            "description": "prompt",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "ai"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/ai/imagine": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "prompt",
+            "in": "query",
+            "description": "prompt",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "ai"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/ai/list": {
+      "get": {
+        "summary": "",
+        "parameters": [],
+        "tags": [
+          "ai"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/ai/models": {
+      "get": {
+        "summary": "",
+        "parameters": [],
+        "tags": [
+          "ai"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/ai/remini": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "imageURL",
+            "in": "query",
+            "description": "imageURL",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "ai"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/brainxiex/buat-transaksi": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "jumlah",
+            "in": "query",
+            "description": "jumlah",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "webhook",
+            "in": "query",
+            "description": "webhook",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "brainxiex"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/brainxiex/cek-transaksi": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "brainxiex"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/brainxiex/cek-user": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "pID",
+            "in": "query",
+            "description": "pID",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "brainxiex"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/brainxiex/domain": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "domain",
+            "in": "query",
+            "description": "domain",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "brainxiex"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/brainxiex/myinfo": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "pName",
+            "in": "query",
+            "description": "pName",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "pPassword",
+            "in": "query",
+            "description": "pPassword",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "brainxiex"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/brainxiex/panel-server-get-file-backups": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "uuid",
+            "in": "query",
+            "description": "uuid",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filename",
+            "in": "query",
+            "description": "filename",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "brainxiex"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/brainxiex/panel-server-get-list-backups": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "uuid",
+            "in": "query",
+            "description": "uuid",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "brainxiex"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/brainxiex/panel-server-info": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "uuid",
+            "in": "query",
+            "description": "uuid",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "brainxiex"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/brainxiex/panel-server-logs": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "uuid",
+            "in": "query",
+            "description": "uuid",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "tail",
+            "in": "query",
+            "description": "tail",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "brainxiex"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/brainxiex/topup-apikey": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "pName",
+            "in": "query",
+            "description": "pName",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "pPassword",
+            "in": "query",
+            "description": "pPassword",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "brainxiex"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/downloader/facebook": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "url",
+            "in": "query",
+            "description": "url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "downloader"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/downloader/instagram": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "url",
+            "in": "query",
+            "description": "url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "downloader"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/downloader/play": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "description": "search",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "downloader"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/downloader/reels": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "url",
+            "in": "query",
+            "description": "url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "downloader"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/downloader/tiktok": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "url",
+            "in": "query",
+            "description": "url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "downloader"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/downloader/youtube-play-audio": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "url",
+            "in": "query",
+            "description": "url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "description": "search",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "downloader"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/downloader/youtube": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "url",
+            "in": "query",
+            "description": "url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "downloader"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/generate copy/index": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "model",
+            "in": "query",
+            "description": "model",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "prompt",
+            "in": "query",
+            "description": "prompt",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sessionID",
+            "in": "query",
+            "description": "sessionID",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "generate copy"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/image/banner": {
+      "get": {
+        "summary": "[ppimg (optional)]",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "text",
+            "in": "query",
+            "description": "text",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ppimg",
+            "in": "query",
+            "description": "ppimg",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "image"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/image/brat-putih": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "text",
+            "in": "query",
+            "description": "text",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "image"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/image/brat": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "text",
+            "in": "query",
+            "description": "text",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "image"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/image/fakechat": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "arg",
+            "in": "query",
+            "description": "arg",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ppimg",
+            "in": "query",
+            "description": "ppimg",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "image"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/image/myinfo": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "nama",
+            "in": "query",
+            "description": "nama",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "nomor",
+            "in": "query",
+            "description": "nomor",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ppimg",
+            "in": "query",
+            "description": "ppimg",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "money",
+            "in": "query",
+            "description": "money",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "inv",
+            "in": "query",
+            "description": "inv",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "xp",
+            "in": "query",
+            "description": "xp",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "bank",
+            "in": "query",
+            "description": "bank",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "umpan",
+            "in": "query",
+            "description": "umpan",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "status",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "background",
+            "in": "query",
+            "description": "background",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "title",
+            "in": "query",
+            "description": "title",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "image"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/image/nulis": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "nama",
+            "in": "query",
+            "description": "nama",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "nomor",
+            "in": "query",
+            "description": "nomor",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ppimg",
+            "in": "query",
+            "description": "ppimg",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "money",
+            "in": "query",
+            "description": "money",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "inv",
+            "in": "query",
+            "description": "inv",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "xp",
+            "in": "query",
+            "description": "xp",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "bank",
+            "in": "query",
+            "description": "bank",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "umpan",
+            "in": "query",
+            "description": "umpan",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "status",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "background",
+            "in": "query",
+            "description": "background",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "title",
+            "in": "query",
+            "description": "title",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "image"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/image/qr": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "text",
+            "in": "query",
+            "description": "text",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "image"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/image/resize": {
+      "get": {
+        "summary": "[base64 disini adalah buffer gambar yang di jadiin base64]",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "base64",
+            "in": "query",
+            "description": "base64",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "x",
+            "in": "query",
+            "description": "x",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "y",
+            "in": "query",
+            "description": "y",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "image"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/image/screenshot": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "url",
+            "in": "query",
+            "description": "url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "image"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/image/sticker": {
+      "get": {
+        "summary": "[base64 disini adalah buffer gambar yang di jadiin base64]",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "base64",
+            "in": "query",
+            "description": "base64",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "pack",
+            "in": "query",
+            "description": "pack",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "image"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/image/text": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "text",
+            "in": "query",
+            "description": "text",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ukuranfont",
+            "in": "query",
+            "description": "ukuranfont",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "image"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/image/welcome": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "nama",
+            "in": "query",
+            "description": "nama",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ppimg",
+            "in": "query",
+            "description": "ppimg",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "grup",
+            "in": "query",
+            "description": "grup",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "title",
+            "in": "query",
+            "description": "title",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "image"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/image/welcome2": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "nama",
+            "in": "query",
+            "description": "nama",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "nomor",
+            "in": "query",
+            "description": "nomor",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ppimg",
+            "in": "query",
+            "description": "ppimg",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "grup",
+            "in": "query",
+            "description": "grup",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "membernya",
+            "in": "query",
+            "description": "membernya",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "title",
+            "in": "query",
+            "description": "title",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "image"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/islami/asmaulhusna": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          }
+        ],
+        "tags": [
+          "islami"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/islami/ayatkursi": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          }
+        ],
+        "tags": [
+          "islami"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/islami/doa": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          }
+        ],
+        "tags": [
+          "islami"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/islami/jadwalsholat": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "kota",
+            "in": "query",
+            "description": "kota",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "islami"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/islami/kisahnabi": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          }
+        ],
+        "tags": [
+          "islami"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/islami/niatsholat": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          }
+        ],
+        "tags": [
+          "islami"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/islami/tahlil": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          }
+        ],
+        "tags": [
+          "islami"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/minigame/caklontong": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          }
+        ],
+        "tags": [
+          "minigame"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/minigame/family100": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          }
+        ],
+        "tags": [
+          "minigame"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/minigame/matematika": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          }
+        ],
+        "tags": [
+          "minigame"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/minigame/siapakahaku": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          }
+        ],
+        "tags": [
+          "minigame"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/minigame/susunkata": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          }
+        ],
+        "tags": [
+          "minigame"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/minigame/tebakbendera": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          }
+        ],
+        "tags": [
+          "minigame"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/minigame/tebakgambar": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          }
+        ],
+        "tags": [
+          "minigame"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/minigame/tebakkalimat": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          }
+        ],
+        "tags": [
+          "minigame"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/minigame/tebakkata": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          }
+        ],
+        "tags": [
+          "minigame"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/minigame/tebakkimia": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          }
+        ],
+        "tags": [
+          "minigame"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/minigame/tebaklirik": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          }
+        ],
+        "tags": [
+          "minigame"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/minigame/tebaktebakan": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          }
+        ],
+        "tags": [
+          "minigame"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/nsfw/7 Disembunyikan Wlee": {
+      "get": {
+        "summary": "",
+        "parameters": [],
+        "tags": [
+          "nsfw"
+        ],
+        "responses": {
+          "200": {
+            "description": "DI BILANG DI SEMBUNYIKAN KONTOL !!!"
+          }
+        }
+      }
+    },
+    "/api/nsfw/hentai": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          }
+        ],
+        "tags": [
+          "nsfw"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/ollama/api/generate": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "model",
+            "in": "query",
+            "description": "model",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "prompt",
+            "in": "query",
+            "description": "prompt",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sessionID",
+            "in": "query",
+            "description": "sessionID",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "ollama"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/ppob/awf-klikindomaret": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "description": "search",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "ppob"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/ppob/indomaret-catalog-search": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "description": "search",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "ppob"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/ppob/plu": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "plu",
+            "in": "query",
+            "description": "plu",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "ppob"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/ppob/rak-add": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "description": "search",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "ppob"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/ppob/rak-search": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "description": "search",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "ppob"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/ppob/search": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "description": "search",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "ppob"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/primbon/artimimpi": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "mimpi",
+            "in": "query",
+            "description": "mimpi",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "primbon"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/primbon/artinama": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "nama",
+            "in": "query",
+            "description": "nama",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "primbon"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/primbon/zodiak": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "zodiak",
+            "in": "query",
+            "description": "zodiak",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "primbon"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/random/apakah": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "apakah",
+            "in": "query",
+            "description": "apakah",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "random"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/random/bisakah": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "bisakah",
+            "in": "query",
+            "description": "bisakah",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "random"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/random/citacita": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "nama",
+            "in": "query",
+            "description": "nama",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "random"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/random/dare": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          }
+        ],
+        "tags": [
+          "random"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/random/fakta": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          }
+        ],
+        "tags": [
+          "random"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/random/gombal": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          }
+        ],
+        "tags": [
+          "random"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/random/hobi": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "nama",
+            "in": "query",
+            "description": "nama",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "random"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/random/katamutiara": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          }
+        ],
+        "tags": [
+          "random"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/random/tebakan": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          }
+        ],
+        "tags": [
+          "random"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/random/truth": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          }
+        ],
+        "tags": [
+          "random"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/random/watak": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          }
+        ],
+        "tags": [
+          "random"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/servergame/samp": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "host",
+            "in": "query",
+            "description": "host",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "port",
+            "in": "query",
+            "description": "port",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "servergame"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/tools/base64": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "text",
+            "in": "query",
+            "description": "text",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "mode",
+            "in": "query",
+            "description": "mode",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "tools"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/tools/cek-speed": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "url",
+            "in": "query",
+            "description": "url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "tools"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/tools/cuaca": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "lokasi",
+            "in": "query",
+            "description": "lokasi",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "mode",
+            "in": "query",
+            "description": "mode",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "tools"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/tools/enchant": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "text",
+            "in": "query",
+            "description": "text",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "mode",
+            "in": "query",
+            "description": "mode",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "tools"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/tools/format": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "toext",
+            "in": "query",
+            "description": "toext",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fileurl",
+            "in": "query",
+            "description": "fileurl",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "tools"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/tools/google": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "description": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "tools"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/tools/gtts": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "text",
+            "in": "query",
+            "description": "text",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "tools"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/tools/igstalk": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "description": "username",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "tools"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/tools/mimetype": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "text",
+            "in": "query",
+            "description": "text",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "mode",
+            "in": "query",
+            "description": "mode",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "tools"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/tools/proxy": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "url",
+            "in": "query",
+            "description": "url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "tools"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/tools/robloxstalk": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "description": "username",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "tools"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/tools/sunda": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "text",
+            "in": "query",
+            "description": "text",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "tools"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/tools/tiktokstalk": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "description": "username",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "tools"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/tools/tts-ai": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "text",
+            "in": "query",
+            "description": "text",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "model",
+            "in": "query",
+            "description": "model",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "tools"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/tools/tts": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "text",
+            "in": "query",
+            "description": "text",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "tools"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/whatsapp/sendAudio": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "nomor",
+            "in": "query",
+            "description": "nomor",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "text",
+            "in": "query",
+            "description": "text",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "url",
+            "in": "query",
+            "description": "url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "whatsapp"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/whatsapp/sendImage": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "nomor",
+            "in": "query",
+            "description": "nomor",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "text",
+            "in": "query",
+            "description": "text",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "url",
+            "in": "query",
+            "description": "url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "whatsapp"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/whatsapp/sendSticker": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "nomor",
+            "in": "query",
+            "description": "nomor",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "text",
+            "in": "query",
+            "description": "text",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "url",
+            "in": "query",
+            "description": "url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "whatsapp"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/whatsapp/sendText": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "nomor",
+            "in": "query",
+            "description": "nomor",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "text",
+            "in": "query",
+            "description": "text",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "whatsapp"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    },
+    "/api/whatsapp/sendVideo": {
+      "get": {
+        "summary": "",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIKEY"
+          },
+          {
+            "name": "nomor",
+            "in": "query",
+            "description": "nomor",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "text",
+            "in": "query",
+            "description": "text",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "url",
+            "in": "query",
+            "description": "url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "whatsapp"
+        ],
+        "responses": {
+          "200": {
+            "description": "sukses menampilkan data"
+          }
+        }
+      }
+    }
+  }
+}
